@@ -21,7 +21,7 @@
 
 	PBCLIProxy *cliProxy;
 }
-@property (retain) PBCLIProxy* cliProxy;
+@property (strong) PBCLIProxy* cliProxy;
 
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator;
 - (NSManagedObjectModel *)managedObjectModel;

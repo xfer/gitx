@@ -149,7 +149,7 @@ void add_line(struct PBGitGraphLine *lines, int *nLines, int upper, int from, in
 	commit.lineInfo = previous;
 }
 
-- (void) finalize
+- (void) dealloc
 {
 	std::list<PBGitLane *> *lanes = (std::list<PBGitLane *> *)pl;
 	std::list<PBGitLane *>::iterator it = lanes->begin();
@@ -158,6 +158,5 @@ void add_line(struct PBGitGraphLine *lines, int *nLines, int upper, int from, in
 
 	delete lanes;
 
-	[super finalize];
 }
 @end

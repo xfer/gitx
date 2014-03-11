@@ -21,7 +21,7 @@
 	PBViewController* viewController;
 }
 
-@property (assign) __weak PBGitRepository *repository;
+@property (weak)  PBGitRepository *repository;
 @property (readonly) NSViewController *viewController;
 @property (assign) int selectedViewIndex;
 

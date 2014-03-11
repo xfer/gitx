@@ -15,8 +15,8 @@
 	PBGitCommit *commit;
 }
 	
-@property (retain) PBGitCommit *commit;
-@property (retain) PBGitRef *ref;
+@property (strong) PBGitCommit *commit;
+@property (strong) PBGitRef *ref;
 
 + (NSArray *)defaultMenuItemsForRef:(PBGitRef *)ref commit:(PBGitCommit *)commit target:(id)target;
 

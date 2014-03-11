@@ -67,7 +67,6 @@
 - (void) removeView
 {
 	[webController closeView];
-	[super finalize];
 }
 
 - (NSResponder *)firstResponder;

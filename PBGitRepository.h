@@ -20,8 +20,8 @@ extern NSString* PBGitRepositoryErrorDomain;
 	PBGitConfig *config;
 
 	BOOL hasChanged;
-	NSMutableArray *branches;
-	PBGitRevSpecifier *currentBranch;
+	NSMutableArray *__strong branches;
+	PBGitRevSpecifier *__strong currentBranch;
 	NSMutableDictionary *refs;
 
 	PBGitRevSpecifier *_headRef; // Caching
@@ -68,8 +68,8 @@ extern NSString* PBGitRepositoryErrorDomain;
 @property (assign) BOOL hasChanged;
 @property (readonly) PBGitWindowController *windowController;
 @property (readonly) PBGitConfig *config;
-@property (retain) PBGitRevList* revisionList;
-@property (assign) NSMutableArray* branches;
-@property (assign) PBGitRevSpecifier *currentBranch;
-@property (retain) NSMutableDictionary* refs;
+@property (strong) PBGitRevList* revisionList;
+@property (strong) NSMutableArray* branches;
+@property (strong) PBGitRevSpecifier *currentBranch;
+@property (strong) NSMutableDictionary* refs;
 @end

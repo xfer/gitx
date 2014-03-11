@@ -17,7 +17,7 @@
 	IBOutlet NSToolbar *viewToolbar;
 }
 
-@property (readonly) __weak PBGitRepository *repository;
+@property (weak, readonly)  PBGitRepository *repository;
 @property (readonly) NSToolbar *viewToolbar;
 
 - (id)initWithRepository:(PBGitRepository *)theRepository superController:(PBGitWindowController *)controller;

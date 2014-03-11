@@ -23,10 +23,10 @@
 
 - (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    if ([(NSString *)context isEqualToString: @"branchChange"]) {
+    if ([(__bridge NSString *)context isEqualToString: @"branchChange"]) {
 		[self updateBranchMenu];
 	}
-	else if ([(NSString *)context isEqualToString:@"currentBranchChange"]) {
+	else if ([(__bridge NSString *)context isEqualToString:@"currentBranchChange"]) {
 		[self selectCurrentBranch];
 	}
 	else {

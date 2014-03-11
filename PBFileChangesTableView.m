@@ -18,7 +18,13 @@
 		NSPoint eventLocation = [self convertPoint: [theEvent locationInWindow] fromView: nil];
 		NSInteger rowIndex = [self rowAtPoint:eventLocation];
 		[self selectRowIndexes:[NSIndexSet indexSetWithIndex:rowIndex] byExtendingSelection:TRUE];
-		return [[self delegate] menuForTable: self];
+        NSObject *delegate = [self delegate];
+        if ([delegate isKindOfClass:[PBGitIndexController class]]) {
+            PBGitIndexController *controller = (PBGitIndexController *)delegate;
+            return [controller menuForTable:self];
+        }
+        NSLog(@"[[self delegate] menuForTable: self] == not found =( ");
+		return nil;
 	}
 
 	return nil;

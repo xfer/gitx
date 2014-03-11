@@ -30,8 +30,8 @@
 }
 
 @property (assign) int selectedTab;
-@property (retain) PBGitCommit *webCommit, *rawCommit;
-@property (retain) PBGitTree* gitTree;
+@property (strong) PBGitCommit *webCommit, *rawCommit;
+@property (strong) PBGitTree* gitTree;
 @property (readonly) NSArrayController *commitController;
 
 - (IBAction) setDetailedView: sender;

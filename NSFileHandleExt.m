@@ -45,12 +45,13 @@
 		}       
 		
 		switch (*(buffer + bytesReceived - 1)) {
-			case '\n':
+			case '\n': {
 				buffer[bytesReceived-1] = '\0';
 				NSString* s = [NSString stringWithCString: buffer encoding: NSUTF8StringEncoding];
 				if ([s length] == 0)
 					s = [NSString stringWithCString: buffer encoding: NSISOLatin1StringEncoding];
 				return s;
+			}
 			case '\r':
 				bytesReceived--;
 		}

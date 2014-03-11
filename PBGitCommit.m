@@ -114,10 +114,9 @@
 	[[repository refs] setObject:refs forKey:[self realSha]];
 }
 
-- (void)finalize
+- (void)dealloc
 {
 	free(parentShas);
-	[super finalize];
 }
 
 + (BOOL)isSelectorExcludedFromWebScript:(SEL)aSelector

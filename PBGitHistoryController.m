@@ -80,14 +80,14 @@
 
 - (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
-    if ([(NSString *)context isEqualToString: @"commitChange"]) {
+    if ([(__bridge NSString *)context isEqualToString: @"commitChange"]) {
 		[self updateKeys];
 		return;
 	}
-	else if ([(NSString *)context isEqualToString: @"treeChange"]) {
+	else if ([(__bridge NSString *)context isEqualToString: @"treeChange"]) {
 		[self updateQuicklookForce: NO];
 	}
-	else if([(NSString *)context isEqualToString:@"branchChange"]) {
+	else if([(__bridge NSString *)context isEqualToString:@"branchChange"]) {
 		// Reset the sorting
 		commitController.sortDescriptors = [NSArray array];
 	}

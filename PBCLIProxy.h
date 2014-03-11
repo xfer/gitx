@@ -13,7 +13,7 @@
 {
 	NSConnection *connection;
 }
-@property (retain) NSConnection* connection;
+@property (strong) NSConnection* connection;
 @end
 
 #define ConnectionName @"GitX DO Connection"

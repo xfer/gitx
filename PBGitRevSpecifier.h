@@ -28,8 +28,8 @@
 + (PBGitRevSpecifier *)allBranchesRevSpec;
 + (PBGitRevSpecifier *)localBranchesRevSpec;
 
-@property(retain)   NSString *description;
+@property(strong)   NSString *description;
 @property(readonly) NSArray *parameters;
-@property(retain)   NSURL *workingDirectory;
+@property(strong)   NSURL *workingDirectory;
 
 @end

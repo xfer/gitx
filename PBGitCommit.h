@@ -43,7 +43,7 @@
 @property (assign) git_oid *parentShas;
 @property (assign) int nParents, timestamp;
 
-@property (retain) NSMutableArray* refs;
+@property (strong) NSMutableArray* refs;
 @property (readonly) NSDate *date;
 @property (readonly) NSString* dateString;
 @property (readonly) NSString* patch;
@@ -52,6 +52,6 @@
 @property (readonly) NSString* details;
 @property (readonly) PBGitTree* tree;
 @property (readonly) NSArray* treeContents;
-@property (retain) PBGitRepository* repository;
-@property (retain) id lineInfo;
+@property (strong) PBGitRepository* repository;
+@property (strong) id lineInfo;
 @end

@@ -20,6 +20,6 @@
 - (void) readCommitsForce: (BOOL) force;
 - (void) reload;
 
-@property(retain) NSArray* commits;
+@property(strong) NSArray* commits;
 
 @end
