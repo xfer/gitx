@@ -18,7 +18,8 @@
 	[historyController addObserver:self forKeyPath:@"repository.branches" options:0 context:@"branchChange"];
 	[historyController addObserver:self forKeyPath:@"repository.currentBranch" options:0 context:@"currentBranchChange"];
 	[self updateBranchMenu];
-	[self selectCurrentBranch];
+//	[self selectCurrentBranch];
+    [self selectAllBranches];
 }
 
 - (void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
@@ -323,6 +324,15 @@
 	PBGitRevSpecifier *rev = historyController.repository.currentBranch;
 	if (rev)
 		[branchPopUp setTitle:[rev description]];
+}
+
+- (void) selectAllBranches {
+	for (PBGitRevSpecifier *rev in historyController.repository.branches) {
+		if (![rev isSimpleRef]) {
+            [branchPopUp setTitle:[rev description]];
+            break;
+        }
+    }
 }
 
 @end
