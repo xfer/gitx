@@ -13,10 +13,8 @@
 
 - (void)drawRect:(NSRect)aRect
 {
-	NSColor *originalColor = [self backgroundColor];
-	[originalColor set];
-	NSRectFill(aRect);
-
+   [NSGraphicsContext saveGraphicsState];
+    
 	// draw a vertical line after the given size (used as an indicator
 	// for the first line of the commit message)
 	float characterWidth = [@" " sizeWithAttributes:[self typingAttributes]].width;
@@ -30,11 +28,13 @@
     line.origin.y = aRect.origin.y;
 	line.size.width = 1;
 	line.size.height = aRect.size.height;
+    
+//    line = NSIntegralRect(line); // avoid 0.5 pixels
 	NSRectFill(line);
-
-	[self setBackgroundColor:nil];
+    
+    [NSGraphicsContext restoreGraphicsState];
+    [self setBackgroundColor:nil];
 	[super drawRect:aRect];
-	[self setBackgroundColor:originalColor];
 }
 
 @end
